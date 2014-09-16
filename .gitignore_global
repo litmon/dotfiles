@@ -1,0 +1,56 @@
+# cache file
+*~
+*.swp
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.apdisk
+.DS_Store
+.AppleDB
+.LSOverride
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+
+# Node.js
+node_modules
+
+# Android
+*.apk
+*.ap_
+*.dex
+*.log 
+*.class
+local.properties
+bin/
+gen/
+build/
+.gradle/
+proguard/
+
+# iOS
+*.xccheckout
+*.moved-aside
+*.hmap
+*.ipa
+*.xcuserstate
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+xcuserdata
+DerivedData
+build/
