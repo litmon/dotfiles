@@ -24,9 +24,10 @@ GIT_PS1_SHOWDIRTYSTATE=true
 
 # ユーザー名のところを編集(gitリポジトリの状態を追加)
 export PS1='\h:\W $(__git_ps1 "[\[\033[32m\]%s\[\033[0m\]]")\$ '
+# fukuo:~ FukuoKadota$
 
 # adbにパスを通す
-export PATH="$PATH:$HOME/android-sdks/platform-tools"
+export PATH="$PATH:/Users/FukuoKadota/android-sdks/platform-tools"
 
 # android-ndkにパスを通す
-export PATH="$PATH:$HOME/android-ndk-r9b"
+export PATH="$PATH:/Users/FukuoKadota/android-ndk-r9b"
