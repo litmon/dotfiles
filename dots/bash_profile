@@ -17,8 +17,8 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 # git settings 
-source ~/git-completion.bash
-source ~/git-prompt.sh
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=true
 
 ## ユーザー名のところを編集(gitリポジトリの状態を追加)
