@@ -3,49 +3,46 @@ if [ -f ~/.bashrc ] ; then
 fi
 
 # nvm
-# これなんだろう
 . ~/.nvm/nvm.sh
-# node.jsのデフォルトバージョンを使う
+## node.jsのデフォルトバージョンを使う
 nvm use default
-# npmのディレクトリ場所
+## npmのディレクトリ場所
 npm_dir=${NVM_PATH}_modules
-# node_pathを読み込み？
+## node_pathを読み込み？
 export NODE_PATH=$npm_dir
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
-# init rbenv
+## init rbenv
 eval "$(rbenv init -)"
 
 # git settings 
-# source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
-# source /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+source ~/git-completion.bash
+source ~/git-prompt.sh
 GIT_PS1_SHOWDIRTYSTATE=true
 
-# ユーザー名のところを編集(gitリポジトリの状態を追加)
+## ユーザー名のところを編集(gitリポジトリの状態を追加)
 export PS1='\h:\W $(__git_ps1 "[\[\033[32m\]%s\[\033[0m\]]")\$ '
-# fukuo:~ FukuoKadota$
 
 # pkg-configのパスを通す
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/Users/FukuoKadota/Downloads/cocos2d-js-v3.0/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
+## export COCOS_CONSOLE_ROOT=
+## export PATH=$COCOS_CONSOLE_ROOT:$PATH
 
-# Add environment variable NDK_ROOT for cocos2d-x
-export NDK_ROOT=/Users/FukuoKadota/android-ndk-r9b
+## Add environment variable NDK_ROOT for cocos2d-x
+export NDK_ROOT=/usr/local/opt/android-ndk
 export PATH=$NDK_ROOT:$PATH
 
-# Add environment variable ANDROID_SDK_ROOT for cocos2d-x
-export ANDROID_SDK_ROOT=/Users/FukuoKadota/Desktop/ADT\ Bundle\ Eclipse\ ver.23/sdk
+## Add environment variable ANDROID_SDK_ROOT for cocos2d-x
+export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
 export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
-# Add environment variable ANT_ROOT for cocos2d-x
+## Add environment variable ANT_ROOT for cocos2d-x
 export ANT_ROOT=/usr/local/bin
 export PATH=$ANT_ROOT:$PATH
 
+# less settings
 export LESS="-iMQRX"

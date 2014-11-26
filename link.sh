@@ -3,6 +3,9 @@
 # bash settings 
 ln -s dots/bashrc ~/.bashrc
 ln -s dots/bash_profile ~/.bash_profile
+## scripts
+ln -s git-scripts/git-completion.bash ~/.git-completion.bash
+ln -s git-scripts/git-prompt.sh ~/.git-prompt.sh
 
 # vim settings
 ln -s dots/vimrc ~/.vimrc
