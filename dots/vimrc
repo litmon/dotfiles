@@ -96,8 +96,20 @@ if !exists(":DiffOrig")
 				\ | wincmd p | diffthis
 endif
 
-" defalutカラースキーム変更
-colorscheme ron 
+
+"==================================================================
+" Vim 設定
+"==================================================================
+
+" vimrcを保存した時に即時反映
+augroup source_vimrc
+  autocmd!
+  autocmd BufWritePost .vimrc source $MYVIMRC
+augroup END
+
+" 色設定
+colorscheme moncolor
+highlight Constant ctermfg=Yellow
 
 " シンタックス
 syntax on
@@ -111,15 +123,38 @@ set number
 
 " ステータスライン表示
 set laststatus=2
+
 " <TAB>の対応する空白の数
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 
 " カーソルを行頭末で止まらないようにする
 set whichwrap=b,s,h,l,<,>,[,l]
 " 大文字小文字を区別しない
 set ignorecase
+
+" コマンドライン補完
+set wildmode=list,full
+
+" markdownを編集するときのカラーハイライトを適用
+augroup markdown
+  autocmd!
+  au BufNewFile,BufRead *.md :set filetype=markdown
+augroup END!
+
+"==================================================================
+" Key Mapping
+"==================================================================
+" キーマップ 検索でカーソルが動かないようにする
+nnoremap * *N
+nnoremap # #N
+nnoremap g* g*N
+nnoremap g# g#N
+
+" visualモードで選択した部分を * で検索
+vnoremap * "zy:let @/ = @z<CR>n
 
 " キーマップ タブ
 nnoremap to :tabnew<space>
@@ -127,39 +162,42 @@ nnoremap <silent> tn :tabnext<cr>
 nnoremap <silent> tt :tabnext<cr>
 nnoremap <silent> tp :tabprevious<cr>
 
-" コマンドライン補完
-set wildmode=list,full
-
-" 色設定
-highlight Constant ctermfg=Yellow
-
 " 文字列検索後のハイライトを消す
-nmap <ESC><ESC> :nohlsearch<CR><ESC>
+nnoremap <ESC><ESC> :nohlsearch<CR><ESC>
 
 " 挿入モードでCtr-D Delete
 inoremap <C-D> <Delete>
 
-
+" カーソル移動
 nnoremap j gj
 nnoremap k gk
 
+" バッファ関連
+" nnoremap <silent>bp :bprevious<CR>
+" nnoremap <silent>bn :bnext<CR>
+" nnoremap <silent>bb :b#<CR>
+
+"==================================================================
 " 保存時に行末の空白を除去する
 " autocmd BufWritePre * :%s/\s\+$//ge
 " 全角スペースを目立たせる
+"==================================================================
 function! ZenkakuSpace()
-	highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
+  highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
 endfunction
 
 if has('syntax')
-	augroup ZenkakuSpace
-		autocmd!
-		autocmd ColorScheme       * call ZenkakuSpace()
-		autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
-	augroup END
-	call ZenkakuSpace()
+  augroup ZenkakuSpace
+    autocmd!
+    autocmd ColorScheme       * call ZenkakuSpace()
+    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+  augroup END
+  call ZenkakuSpace()
 endif
 
-"""""" NeoBundle
+"==================================================================
+" NeoBundle
+"==================================================================
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
   call neobundle#rc(expand('~/.vim/bundle/'))
@@ -169,51 +207,71 @@ syntax on
 filetype on
 filetype plugin indent on
 
-" neobundleの更新
+" package一覧
 NeoBundle 'Shougo/neobundle.vim'
-
-" neocomplete スニペット作成
-" NeoBundle 'Shougo/neocomplete.vim'
-
-""" neocomplete 各種設定
-" 読み込み時にneocompleteを有効
-" let g:neocomplete#enable_at_startup=1
-" 大文字を最初に入力したら検索しない
-let g:neocomplete#enable_smart_case=1
-" 大文字小文字を無視
-let g:neocomplete#enable_ignore_case=1
-" 最小のシンタックスキーワード
-let g:neocomplete#sources#syntax#min_keyword_length=4
-let g:neocomplete#lock_buffer_name_pattern='\*ku\*'
-" オートセレクト
-let g:neocomplete#enable_auto_select=1
-" ファイルの区切りを自動で検出
-let g:neocomplete#enable_auto_delimiter=1
-" 辞書の位置
-let g:neocomplcache_dictionary_filetype_lists = {
-    \ 'default' : ''
-	\ }
-
 NeoBundle 'kana/vim-surround'
 NeoBundle 'h1mesuke/vim-alignta'
 NeoBundle 'rking/ag.vim'
-
-""" emmet.vim 各種設定
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'xolox/vim-session',{'depends':'xolox/vim-misc'}
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'croaker/mustang-vim'
+NeoBundle 'jeffreyiacono/vim-colors-wombat'
+NeoBundle 'nanotech/jellybeans.vim'
+NeoBundle 'vim-scripts/Lucius'
+NeoBundle 'vim-scripts/Zenburn'
+NeoBundle 'mrkn/mrkn256.vim'
+NeoBundle 'jpo/vim-railscasts-theme'
+NeoBundle 'therubymug/vim-pyte'
+NeoBundle 'tomasr/molokai'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'ctrlpvim/ctrlp.vim'
+NeoBundle 'tpope/vim-rails'
+NeoBundle 'tyru/vim-altercmd'
+NeoBundle 'slim-template/vim-slim'
+
+"==================================================================
+" ag.vim 設定
+"==================================================================
+" insert modeで開始
+let g:unite_enable_start_insert = 1
+
+" 大文字小文字を区別しない
+let g:unite_enable_ignore_case = 1
+let g:unite_enable_smart_case = 1
+
+" grep検索
+nnoremap <silent> ,g  :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
+
+" カーソル位置の単語をgrep検索
+nnoremap <silent> ,cg :<C-u>Unite grep:. -buffer-name=search-buffer<CR><C-R><C-W>
+
+" grep検索結果の再呼出
+nnoremap <silent> ,r  :<C-u>UniteResume search-buffer<CR>
+
+" unite grep に ag(The Silver Searcher) を使う
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
+endif
+
+"==================================================================
+""" emmet.vim 各種設定
+"==================================================================
 let g:user_emmet_settings = {'lang' : 'ja'}
 
-" css3-syntax
-NeoBundle 'hail2u/vim-css3-syntax'
-" シンタックスチェック
-NeoBundle 'scrooloose/syntastic'
-" let g:syntastic_enable_signs=1
-" let g:syntastic_auto_loc_list=2
 
+"==================================================================
 " window保存
+"==================================================================
 " 保存したいディレクトリで 
 " mkdir .vimsessions
 " vimを開いて :SaveSession
-NeoBundle 'xolox/vim-session', { 'depends':'xolox/vim-misc' }
 " 現在のディレクトリ直下の .vimsessions/ を取得 
 let s:local_session_directory = xolox#misc#path#merge(getcwd(), '.vimsessions')
 " ディレクトリがあれば
@@ -230,30 +288,46 @@ else
 endif
 unlet s:local_session_directory
 
-"" ColorScheme
+"==================================================================
+" ColorScheme
+"==================================================================
 " solarized カラースキーム
-NeoBundle 'altercation/vim-colors-solarized'
 " mustang カラースキーム
-NeoBundle 'croaker/mustang-vim'
 " wombat カラースキーム
-NeoBundle 'jeffreyiacono/vim-colors-wombat'
 " jellybeans カラースキーム
-NeoBundle 'nanotech/jellybeans.vim'
 " lucius カラースキーム
-NeoBundle 'vim-scripts/Lucius'
 " zenburn カラースキーム
-NeoBundle 'vim-scripts/Zenburn'
 " mrkn256 カラースキーム
-NeoBundle 'mrkn/mrkn256.vim'
 " railscasts カラースキーム
-NeoBundle 'jpo/vim-railscasts-theme'
 " pyte カラースキーム
-NeoBundle 'therubymug/vim-pyte'
 " molokai カラースキーム
-NeoBundle 'tomasr/molokai'
+"==================================================================
 
-" カラースキーム一覧表示に Unite.vim を使う
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
 
-NeoBundle 'scrooloose/nerdtree'
+"==================================================================
+" NERDTreeの設定
+"==================================================================
+" <C-e>でNERDTreeをオンオフ いつでもどこでも
+nnoremap <silent> <C-e>      :NERDTreeToggle<CR>
+vnoremap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
+onoremap <silent> <C-e>      :NERDTreeToggle<CR>
+inoremap <silent> <C-e> <Esc>:NERDTreeToggle<CR>
+cnoremap <silent> <C-e> <C-u>:NERDTreeToggle<CR>
+" 引数なしでvimを開いたらNERDTreeを起動、
+" 引数ありならNERDTreeは起動しない、引数で渡されたファイルを開く
+" autocmd vimenter * if !argc() | NERDTree | endif
+" 他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" 無視するファイルを設定する
+let g:NERDTreeIgnore=['\.clean$', '\.swp$', '\.bak$', '\~$']
+
+
+"==================================================================
+" rails.vimの設定
+"==================================================================
+" commandのリマッピング(vim-altercmdを使用)
+autocmd User Rails AlterCommand r R
+autocmd User Rails AlterCommand rc Rcontroller
+autocmd User Rails AlterCommand rm Rmodel
+autocmd User Rails AlterCommand rv Rview
+
