@@ -1,6 +1,6 @@
 #!/bin/sh
-ln -s ~/dotfiles/.vimrc ~/.vimrc
-ln -s ~/dotfiles/.bashrc
-ln -s ~/dotfiles/.bash_profile ~/.bash_profile
-ln -s ~/dotfiles/.gitignore-global
-ln -s ~/dotfiles/.agignore
+ln -s dots/.vimrc ~/.vimrc
+ln -s dots/.bashrc
+ln -s dots/.bash_profile ~/.bash_profile
+ln -s dots/.gitignore-global
+ln -s dots/.agignore
