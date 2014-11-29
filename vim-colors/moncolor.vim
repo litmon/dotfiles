@@ -9,7 +9,6 @@ if version > 580
 endif
 
 set t_Co=256
-let g:colors_name = "moncolor2"
 hi DiffAdd                      ctermbg=33
 hi IncSearch			    					guifg=#00ff09 guibg=#0561ff guisp=#0561ff gui=bold ctermfg=NONE ctermbg=27  	cterm=bold
 hi SpecialComment	    					guifg=#d5ff00 guibg=NONE    guisp=NONE    gui=NONE ctermfg=190  ctermbg=NONE	cterm=NONE

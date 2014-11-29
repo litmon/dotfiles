@@ -3,15 +3,16 @@ if [ -f ~/.bashrc ] ; then
 fi
 
 # nodebrewのpathを通す
-if [[ -d ~/.nodebrew ]]; then
+if [ -d ~/.nodebrew ]; then
     export PATH=$HOME/.nodebrew/current/bin:$PATH
     nodebrew use default
 fi
 
 # rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-## init rbenv
-eval "$(rbenv init -)"
+if [ -d ~/.rbenv ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
 
 # git settings 
 source ~/.git-completion.bash
