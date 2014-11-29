@@ -2,14 +2,11 @@ if [ -f ~/.bashrc ] ; then
 . ~/.bashrc
 fi
 
-# nvm
-. ~/.nvm/nvm.sh
-## node.jsのデフォルトバージョンを使う
-nvm use default
-## npmのディレクトリ場所
-npm_dir=${NVM_PATH}_modules
-## node_pathを読み込み？
-export NODE_PATH=$npm_dir
+# nodebrewのpathを通す
+if [[ -d ~/.nodebrew ]]; then
+    export PATH=$HOME/.nodebrew/current/bin:$PATH
+    nodebrew use default
+fi
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
