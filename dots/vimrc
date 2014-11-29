@@ -200,39 +200,41 @@ endif
 "==================================================================
 if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
-  call neobundle#rc(expand('~/.vim/bundle/'))
+  call neobundle#begin(expand('~/.vim/bundle/'))
+
+  " package一覧
+  NeoBundle 'Shougo/neobundle.vim'
+  NeoBundle 'kana/vim-surround'
+  NeoBundle 'h1mesuke/vim-alignta'
+  NeoBundle 'rking/ag.vim'
+  NeoBundle 'mattn/emmet-vim'
+  NeoBundle 'hail2u/vim-css3-syntax'
+  NeoBundle 'xolox/vim-session',{'depends':'xolox/vim-misc'}
+  NeoBundle 'altercation/vim-colors-solarized'
+  NeoBundle 'croaker/mustang-vim'
+  NeoBundle 'jeffreyiacono/vim-colors-wombat'
+  NeoBundle 'nanotech/jellybeans.vim'
+  NeoBundle 'vim-scripts/Lucius'
+  NeoBundle 'vim-scripts/Zenburn'
+  NeoBundle 'mrkn/mrkn256.vim'
+  NeoBundle 'jpo/vim-railscasts-theme'
+  NeoBundle 'therubymug/vim-pyte'
+  NeoBundle 'tomasr/molokai'
+  NeoBundle 'Shougo/unite.vim'
+  NeoBundle 'ujihisa/unite-colorscheme'
+  NeoBundle 'scrooloose/nerdtree'
+  NeoBundle 'Shougo/vimproc.vim'
+  NeoBundle 'ctrlpvim/ctrlp.vim'
+  NeoBundle 'tpope/vim-rails'
+  NeoBundle 'tyru/vim-altercmd'
+  NeoBundle 'slim-template/vim-slim'
+
+  call neobundle#end()
 endif
 
 syntax on
 filetype on
 filetype plugin indent on
-
-" package一覧
-NeoBundle 'Shougo/neobundle.vim'
-NeoBundle 'kana/vim-surround'
-NeoBundle 'h1mesuke/vim-alignta'
-NeoBundle 'rking/ag.vim'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'xolox/vim-session',{'depends':'xolox/vim-misc'}
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'croaker/mustang-vim'
-NeoBundle 'jeffreyiacono/vim-colors-wombat'
-NeoBundle 'nanotech/jellybeans.vim'
-NeoBundle 'vim-scripts/Lucius'
-NeoBundle 'vim-scripts/Zenburn'
-NeoBundle 'mrkn/mrkn256.vim'
-NeoBundle 'jpo/vim-railscasts-theme'
-NeoBundle 'therubymug/vim-pyte'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Shougo/vimproc.vim'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'tpope/vim-rails'
-NeoBundle 'tyru/vim-altercmd'
-NeoBundle 'slim-template/vim-slim'
 
 "==================================================================
 " ag.vim 設定
