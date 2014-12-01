@@ -142,7 +142,7 @@ set wildmode=list,full
 augroup markdown
   autocmd!
   au BufNewFile,BufRead *.md :set filetype=markdown
-augroup END!
+augroup END
 
 "==================================================================
 " Key Mapping
@@ -228,6 +228,7 @@ if has('vim_starting')
   NeoBundle 'tpope/vim-rails'
   NeoBundle 'tyru/vim-altercmd'
   NeoBundle 'slim-template/vim-slim'
+  NeoBundle 'aharisu/vim_goshrepl'
 
   call neobundle#end()
 endif
@@ -328,8 +329,19 @@ let g:NERDTreeIgnore=['\.clean$', '\.swp$', '\.bak$', '\~$']
 " rails.vimの設定
 "==================================================================
 " commandのリマッピング(vim-altercmdを使用)
-autocmd User Rails AlterCommand r R
-autocmd User Rails AlterCommand rc Rcontroller
-autocmd User Rails AlterCommand rm Rmodel
-autocmd User Rails AlterCommand rv Rview
+augroup rails
+  autocmd!
+  autocmd User Rails AlterCommand r R
+  autocmd User Rails AlterCommand rc Rcontroller
+  autocmd User Rails AlterCommand rm Rmodel
+  autocmd User Rails AlterCommand rv Rview
+augroup END
 
+"==================================================================
+" gosh_repl.vimの設定
+"==================================================================
+" 選択範囲のプログラムを実行
+augroup gosh
+  autocmd!
+  au BufNewFile,BufRead *.scm vmap <CR> <Plug>(gosh_repl_send_block)
+augroup END
