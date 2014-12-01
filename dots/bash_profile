@@ -3,19 +3,19 @@ if [ -f ~/.bashrc ] ; then
 fi
 
 # nodebrewのpathを通す
-if [ -d ~/.nodebrew ]; then
+if [ -d ~/.nodebrew ] ; then
   export PATH=$HOME/.nodebrew/current/bin:$PATH
   nodebrew use default
 fi
 
 # rbenv
-if [ -d ~/.rbenv ]; then
+if [ -d ~/.rbenv ] ; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
 fi
 
 # git settings 
-if [ -d ~/.git-completion.bash && -d ~/.git-prompt.sh ]; then
+if [ -f ~/.git-completion.bash -a -f ~/.git-prompt.sh ] ; then
   source ~/.git-completion.bash
   source ~/.git-prompt.sh
   GIT_PS1_SHOWDIRTYSTATE=true
@@ -26,23 +26,22 @@ fi
 
 # pkg-configのパスを通す
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
+ 
+# Android SDK settings
+export ANDROID_SDK_ROOT=$HOME/sdk
+export PATH=$ANDROID_SDK_ROOT:$PATH
+export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+# Android NDK settings 
+# $ brew install android-ndk
+export NDK_ROOT=/usr/local/opt/android-ndk
+export PATH=$NDK_ROOT:$PATH
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
 ## export COCOS_CONSOLE_ROOT=
 ## export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-## Add environment variable NDK_ROOT for cocos2d-x
-export NDK_ROOT=/usr/local/opt/android-ndk
-export PATH=$NDK_ROOT:$PATH
-
-## Add environment variable ANDROID_SDK_ROOT for cocos2d-x
-export ANDROID_SDK_ROOT=/usr/local/opt/android-sdk
-export PATH=$ANDROID_SDK_ROOT:$PATH
-export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
-
-## Add environment variable ANT_ROOT for cocos2d-x
-export ANT_ROOT=/usr/local/bin
-export PATH=$ANT_ROOT:$PATH
+## Ant settings(for cocos2d-x)
+## export ANT_ROOT=/usr/local/bin
+## export PATH=$ANT_ROOT:$PATH
 
 # less settings
 export LESS="-iMQRX"
