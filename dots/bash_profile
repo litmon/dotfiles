@@ -2,13 +2,13 @@ if [ -f ~/.bashrc ] ; then
   . ~/.bashrc
 fi
 
-# nodebrewのpathを通す
+# nodebrew settings
 if [ -d ~/.nodebrew ] ; then
   export PATH=$HOME/.nodebrew/current/bin:$PATH
   nodebrew use default
 fi
 
-# rbenv
+# rbenv settings
 if [ -d ~/.rbenv ] ; then
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init -)"
