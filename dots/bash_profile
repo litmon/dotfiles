@@ -2,6 +2,9 @@ if [ -f ~/.bashrc ] ; then
   . ~/.bashrc
 fi
 
+# Java settings
+export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+
 # nodebrew settings
 if [ -d ~/.nodebrew ] ; then
   export PATH=$HOME/.nodebrew/current/bin:$PATH

@@ -179,7 +179,10 @@ nnoremap k gk
 
 "==================================================================
 " 保存時に行末の空白を除去する
+"==================================================================
 " autocmd BufWritePre * :%s/\s\+$//ge
+
+"==================================================================
 " 全角スペースを目立たせる
 "==================================================================
 function! ZenkakuSpace()
@@ -229,6 +232,7 @@ if has('vim_starting')
   NeoBundle 'tyru/vim-altercmd'
   NeoBundle 'slim-template/vim-slim'
   NeoBundle 'aharisu/vim_goshrepl'
+  NeoBundle 'thinca/vim-quickrun'
 
   call neobundle#end()
 endif
@@ -272,10 +276,10 @@ let g:user_emmet_settings = {'lang' : 'ja'}
 "==================================================================
 " window保存
 "==================================================================
-" 保存したいディレクトリで 
+" 保存したいディレクトリで
 " mkdir .vimsessions
 " vimを開いて :SaveSession
-" 現在のディレクトリ直下の .vimsessions/ を取得 
+" 現在のディレクトリ直下の .vimsessions/ を取得
 let s:local_session_directory = xolox#misc#path#merge(getcwd(), '.vimsessions')
 " ディレクトリがあれば
 if isdirectory(s:local_session_directory)
