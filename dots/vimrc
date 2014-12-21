@@ -158,9 +158,8 @@ vnoremap * "zy:let @/ = @z<CR>n
 
 " キーマップ タブ
 nnoremap to :tabnew<space>
-nnoremap <silent> tn :tabnext<cr>
-nnoremap <silent> tt :tabnext<cr>
-nnoremap <silent> tp :tabprevious<cr>
+nnoremap <silent> >> :tabnext<cr>
+nnoremap <silent> << :tabprevious<cr>
 
 " 文字列検索後のハイライトを消す
 nnoremap <ESC><ESC> :nohlsearch<CR><ESC>

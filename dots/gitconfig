@@ -16,3 +16,7 @@ email=app.fk91@gmail.com
   external = git_diff_wrapper
 [pager]
   diff =
+
+[alias]
+  todo = grep -l -e TODO
+  fixme = grep -l -e FIXME
