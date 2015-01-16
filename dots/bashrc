@@ -1,3 +1,7 @@
+
+alias cd="pushd"
+alias bd="popd"
+
 alias rm="rm -i"
 alias ls="ls -GAF"
 alias la="ls -l"
@@ -8,6 +12,6 @@ alias up='export http_proxy="http://proxy.uec.ac.jp:8080"; export https_proxy="h
 alias nup='export http_proxy=""; export https_proxy=""'
 
 # migration alias for lit members
-alias md='bundle exec rake db:drop db:schema:load db:seed RAILS_ENV=development'
+alias md='bundle exec rake db:schema:load db:seed RAILS_ENV=development'
 alias mt='bundle exec rake db:drop db:migrate db:seed RAILS_ENV=test'
 
