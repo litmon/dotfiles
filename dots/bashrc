@@ -1,7 +1,4 @@
 
-alias cd="pushd"
-alias bd="popd"
-
 alias rm="rm -i"
 alias ls="ls -GAF"
 alias la="ls -l"
