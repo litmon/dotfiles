@@ -232,6 +232,7 @@ if has('vim_starting')
   NeoBundle 'slim-template/vim-slim'
   NeoBundle 'aharisu/vim_goshrepl'
   NeoBundle 'thinca/vim-quickrun'
+  NeoBundle 'sudar/vim-arduino-syntax'
 
   call neobundle#end()
 endif
