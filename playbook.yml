@@ -1,0 +1,19 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  user: fukuo
+  vars:
+    homebrew_packages_taps:
+      - homebrew/binary
+      - homebrew/dupes
+    homebrew_packages_packages:
+      - { name: rbenv }
+      - { name: ruby-build }
+    homebrew_cask_packages_packages:
+      - atom
+      - google-chrome
+      - google-japanese-ime
+  roles:
+    - hnakamur.homebrew-packages
+    - hnakamur.homebrew-cask-packages

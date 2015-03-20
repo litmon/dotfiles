@@ -19,7 +19,7 @@ ln -s ${dotfiles_dir}/dots/inputrc ~/.inputrc
 
 # vim settings
 if [ -d $HOME/.vim/colors ]; then
-	mkdir -p $HOME/.vim/colors
+	mkdir -p $HOME/.vim/colors/
 fi
 ln -s ${dotfiles_dir}/dots/vimrc ~/.vimrc
 ln -s ${dotfiles_dir}/vim-colors/moncolor.vim ~/.vim/colors/moncolor.vim
