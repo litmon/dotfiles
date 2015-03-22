@@ -7,14 +7,14 @@
       - homebrew/binary
       - homebrew/dupes
       - caskroom/versions
-    homebrew_packages_packages:
+    homebrew_packages:
       - { name: rbenv }
       - { name: ruby-build }
       - { name: vim }
       - { name: tig }
       - { name: nkf }
       - { name: heroku-toolbelt }
-    homebrew_cask_packages_packages:
+    homebrew_cask_packages:
       - atom
       - google-chrome
       - google-japanese-ime
@@ -31,7 +31,7 @@
       - kobito
       # - genymotion
       # - virtualbox
-    atom_packages_packages:
+    atom_packages:
       # - vim-mode
   roles:
     - hnakamur.homebrew-packages
