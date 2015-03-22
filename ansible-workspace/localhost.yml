@@ -1,0 +1,39 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: no
+  vars:
+    homebrew_packages_taps:
+      - homebrew/binary
+      - homebrew/dupes
+      - caskroom/versions
+    homebrew_packages_packages:
+      - { name: rbenv }
+      - { name: ruby-build }
+      - { name: vim }
+      - { name: tig }
+      - { name: nkf }
+      - { name: heroku-toolbelt }
+    homebrew_cask_packages_packages:
+      - atom
+      - google-chrome
+      - google-japanese-ime
+      - dropbox
+      - karabiner
+      - bettertouchtool
+      - karabiner
+      - totalterminal
+      - slack
+      - kindle
+      - evernote
+      - android-studio
+      - java7
+      - kobito
+      # - genymotion
+      # - virtualbox
+    atom_packages_packages:
+      # - vim-mode
+  roles:
+    - hnakamur.homebrew-packages
+    - hnakamur.homebrew-cask-packages
+    #- hnakamur.atom-packages
