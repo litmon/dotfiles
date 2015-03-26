@@ -34,6 +34,7 @@
       # - virtualbox
     atom_packages:
       # - vim-mode
+      # - japanese-wrap
   roles:
     - hnakamur.homebrew-packages
     - hnakamur.homebrew-cask-packages
