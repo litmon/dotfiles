@@ -35,6 +35,7 @@
     atom_packages:
       # - vim-mode
       # - japanese-wrap
+      # - emmet
   roles:
     - hnakamur.homebrew-packages
     - hnakamur.homebrew-cask-packages
