@@ -16,3 +16,6 @@ fi
 
 echo "===== setup from ansible playbook. ====="
 ansible-playbook ansible/localhost.yml
+
+
+echo "install finished."
