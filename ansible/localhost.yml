@@ -28,15 +28,15 @@
       - evernote
       - android-studio
       - android-file-transfer
+      - genymotion
+      - virtualbox
       - java7
       - kobito
-      # - genymotion
-      # - virtualbox
     atom_packages:
-      # - vim-mode
-      # - japanese-wrap
-      # - emmet
+      - vim-mode
+      - japanese-wrap
+      - emmet
   roles:
     - hnakamur.homebrew-packages
     - hnakamur.homebrew-cask-packages
-    #- hnakamur.atom-packages
+    - hnakamur.atom-packages
