@@ -26,11 +26,11 @@
       - slack
       - kindle
       - evernote
+      - java7
       - android-studio
       - android-file-transfer
       - genymotion
       - virtualbox
-      - java7
       - kobito
     atom_packages:
       - vim-mode
@@ -40,3 +40,12 @@
     - hnakamur.homebrew-packages
     - hnakamur.homebrew-cask-packages
     - hnakamur.atom-packages
+
+  tasks:
+    - name: mkdir vim-neobundle dir
+      file: path=~/.vim/bundle state=directory
+      notify: install neobundle
+
+  handlers:
+    - name: install neobundle
+      command: git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
