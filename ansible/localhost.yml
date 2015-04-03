@@ -44,8 +44,11 @@
   tasks:
     - name: mkdir vim-neobundle dir
       file: path=~/.vim/bundle state=directory
-      notify: install neobundle
+      notify: git clone neobundle
 
   handlers:
-    - name: install neobundle
+    - name: git clone neobundle
       command: git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+      notify: install neobundle
+    - name: install neobundle
+      command: ~/.vim/bundle/neobundle.vim/bin/neoinstall
