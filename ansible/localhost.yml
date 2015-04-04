@@ -32,6 +32,7 @@
       - genymotion
       - virtualbox
       - kobito
+      - firefox
     atom_packages:
       - vim-mode
       - japanese-wrap
