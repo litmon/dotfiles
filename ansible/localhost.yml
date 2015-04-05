@@ -33,6 +33,7 @@
       - virtualbox
       - kobito
       - firefox
+      - silverlight
     atom_packages:
       - vim-mode
       - japanese-wrap
