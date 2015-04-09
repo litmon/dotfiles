@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<root>
+  <item>
+    <name>Escape to EISUU+Escape only terminal</name>
+    <identifier>remap.jis_escape2eisuuAndEscape_terminal</identifier>
+    <only>TERMINAL</only>
+    <autogen>--KeyOverlaidModifier-- KeyCode::ESCAPE, KeyCode::JIS_EISUU, KeyCode::ESCAPE</autogen>
+  </item>
+</root>
