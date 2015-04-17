@@ -158,8 +158,8 @@ vnoremap * "zy:let @/ = @z<CR>n
 
 " キーマップ タブ
 nnoremap to :tabnew<space>
-nnoremap <silent> >> :tabnext<cr>
-nnoremap <silent> << :tabprevious<cr>
+nnoremap <silent> > :tabnext<cr>
+nnoremap <silent> < :tabprevious<cr>
 
 " 文字列検索後のハイライトを消す
 nnoremap <ESC><ESC> :nohlsearch<CR><ESC>
@@ -204,8 +204,17 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
   call neobundle#begin(expand('~/.vim/bundle/'))
 
-  " package一覧
   NeoBundle 'Shougo/neobundle.vim'
+  NeoBundle 'Shougo/vimproc', {
+        \ 'build' : {
+        \ 'windows' : 'make -f make_mingw32.mak',
+        \ 'cygwin' : 'make -f make_cygwin.mak',
+        \ 'mac' : 'make -f make_mac.mak',
+        \ 'unix' : 'make -f make_unix.mak',
+        \ },
+        \ }
+
+  " package一覧
   NeoBundle 'kana/vim-surround'
   NeoBundle 'h1mesuke/vim-alignta'
   NeoBundle 'rking/ag.vim'
@@ -225,7 +234,6 @@ if has('vim_starting')
   NeoBundle 'Shougo/unite.vim'
   NeoBundle 'ujihisa/unite-colorscheme'
   NeoBundle 'scrooloose/nerdtree'
-  NeoBundle 'Shougo/vimproc.vim'
   NeoBundle 'ctrlpvim/ctrlp.vim'
   NeoBundle 'tpope/vim-rails'
   NeoBundle 'tyru/vim-altercmd'
@@ -365,7 +373,7 @@ augroup quickrun
   " <C-c> -> quit QuickRun
   " quickrun.vim が実行していない場合には <C-c> を呼び出す
   au BufNewFile,BufRead * nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
-  
+
   " <C-r> -> execute QuickRun
   au BufNewFile,BufRead * nnoremap <silent> <C-q> :QuickRun<CR>
 augroup END

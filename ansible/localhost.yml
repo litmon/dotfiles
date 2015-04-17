@@ -15,6 +15,7 @@
       - { name: nkf }
       - { name: heroku-toolbelt }
       - { name: ag }
+      - { name: hub }
     homebrew_cask_packages:
       - atom
       - google-chrome
