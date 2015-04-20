@@ -6,7 +6,7 @@ name=Fukuo Kadota
 email=app.fk91@gmail.com
 
 [push]
-	default = upstream
+	default = current
 [filter "media"]
 	clean = git media clean %f
 	smudge = git media smudge %f

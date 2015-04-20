@@ -5,6 +5,8 @@ alias la="ls -l"
 alias utf8='find . -type f | xargs -n 10 nkf --overwrite'
 alias ap='ansible-playbook'
 
+alias be='bundle exec'
+
 # proxy alias for uec
 alias up='export http_proxy="http://proxy.uec.ac.jp:8080"; export https_proxy="http://proxy.uec.ac.jp:8080"'
 alias nup='export http_proxy=""; export https_proxy=""'
