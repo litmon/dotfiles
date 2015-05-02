@@ -374,6 +374,6 @@ augroup quickrun
   " quickrun.vim が実行していない場合には <C-c> を呼び出す
   au BufNewFile,BufRead * nnoremap <expr><silent> <C-c> quickrun#is_running() ? quickrun#sweep_sessions() : "\<C-c>"
 
-  " <C-r> -> execute QuickRun
+  " <C-q> -> execute QuickRun
   au BufNewFile,BufRead * nnoremap <silent> <C-q> :QuickRun<CR>
 augroup END
