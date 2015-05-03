@@ -18,8 +18,8 @@
       - { name: hub }
     homebrew_cask_packages:
       - atom
-      - google-chrome
       - google-japanese-ime
+      - google-chrome
       - dropbox
       - karabiner
       - bettertouchtool
