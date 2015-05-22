@@ -34,16 +34,16 @@ fi
 export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/opt/X11/lib/pkgconfig
  
 # Android SDK settings
-if [ -d $HOME/sdk ]; then
-  export ANDROID_SDK_ROOT=$HOME/sdk
+if [ -d $HOME/Library/Android/sdk ]; then
+  export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
   export PATH=$ANDROID_SDK_ROOT:$PATH
   export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 fi
 
 # Android NDK settings 
 if [ -d /usr/local/opt/android-ndk ]; then
-  export NDK_ROOT=/usr/local/opt/android-ndk
-  export PATH=$NDK_ROOT:$PATH
+  export ANDROID_NDK_ROOT=/usr/local/opt/android-ndk
+  export PATH=$ANDROID_NDK_ROOT:$PATH
 fi
 
 # cocos2d-x settings

@@ -16,6 +16,7 @@
       - { name: heroku-toolbelt }
       - { name: ag }
       - { name: hub }
+      - { name: postgresql }
     homebrew_cask_packages:
       - atom
       - google-japanese-ime
