@@ -30,12 +30,17 @@ $ bundle install
 ### itamae
 
 ```
-$ itamae --host 192.168.56.101 --user root recipe.rb
+$ bundle exec itamae --host 192.168.56.101 --user root recipe.rb
 ```
 
 ね、簡単でしょう？
-
 分かりやすいようにオプションはあえて短くしてません。
+
+(デバッグ用) オプションたくさんバージョン+dry-runで環境を汚さない仕様
+
+```
+$ itamae ssh --host 192.168.56.101 --user root --dry-run --port 22 -l debug --color recipe.rb
+```
 
 ### serverspec
 
