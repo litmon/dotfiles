@@ -63,3 +63,13 @@ serverspecを起動するときはrakeから。
 $ bundle exec rake
 ```
 
+# 参考
+
+[Github repository](https://github.com/itamae-kitchen/itamae)
+
+[Itamae - Infra as Code 現状確認会](https://speakerdeck.com/ryotarai/itamae-infra-as-code-xian-zhuang-que-ren-hui)
+
+[Itamaeチートシート](http://qiita.com/fukuiretu/items/170aa956731f2ffb5715)
+
+[itamae-kitchen/itamae wiki](https://github.com/itamae-kitchen/itamae/wiki)
+

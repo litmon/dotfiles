@@ -17,6 +17,7 @@
       - { name: ag }
       - { name: hub }
       - { name: postgresql }
+      - { name: jruby }
     homebrew_cask_packages:
       - atom
       - google-japanese-ime
