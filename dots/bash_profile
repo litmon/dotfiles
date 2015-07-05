@@ -1,12 +1,13 @@
 if [ -f ~/.bashrc ] ; then
   . ~/.bashrc
 fi
+
 if [ -f ~/.ansible_hosts ] ; then 
   export ANSIBLE_HOSTS=~/.ansible_hosts
 fi
 
 # Java settings
-# export JAVA_HOME=`/usr/libexec/java_home -v 1.6`
+export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 
 # nodebrew settings
 if [ -d ~/.nodebrew ] ; then

@@ -14,8 +14,6 @@ email=app.fk91@gmail.com
 
 [diff]
   external = git_diff_wrapper
-[pager]
-  diff =
 
 [alias]
   todo = grep -l -e TODO
