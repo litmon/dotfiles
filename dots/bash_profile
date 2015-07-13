@@ -69,3 +69,7 @@ export HISTCONTROL=erasedups
 EDITOR=/usr/local/bin/vim
 export EDITOR
 
+# BasicTex settings
+if [ -d /usr/texbin ]; then
+  export PATH=$PATH:/usr/texbin
+fi

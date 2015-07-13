@@ -19,6 +19,8 @@
       - { name: postgresql }
       - { name: jruby }
       - { name: node }
+      - { name: ghostscript }
+      - { name: imagemagick }
     homebrew_cask_packages:
       - atom
       - google-japanese-ime
@@ -39,6 +41,7 @@
       - kobito
       - firefox
       - silverlight
+      - basictex
     atom_packages:
       - vim-mode
       - japanese-wrap
