@@ -2,7 +2,7 @@
 alias rm="rm -i"
 alias ls="ls -GAF"
 alias la="ls -l"
-alias utf8='find . -type f | xargs -n 10 nkf --overwrite'
+alias utf8='find . -type f | xargs -n 10 nkf -w --overwrite'
 alias ap='ansible-playbook'
 
 alias be='bundle exec'

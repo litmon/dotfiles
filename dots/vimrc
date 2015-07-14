@@ -378,3 +378,8 @@ augroup quickrun
   " <C-q> -> execute QuickRun
   au BufNewFile,BufRead * nnoremap <silent> <C-q> :QuickRun<CR>
 augroup END
+
+augroup rubySyntax
+  autocmd!
+  au BufRead,BufNewFile Guardfile set filetype=ruby
+augroup END

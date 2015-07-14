@@ -41,7 +41,7 @@
       - kobito
       - firefox
       - silverlight
-      - basictex
+      - mactex
     atom_packages:
       - vim-mode
       - japanese-wrap
