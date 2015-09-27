@@ -1,11 +1,14 @@
 
 alias rm="rm -i"
-alias ls="ls -GAF"
+alias ls="ls -GAf"
 alias la="ls -l"
 alias utf8='find . -type f | xargs -n 10 nkf -w --overwrite'
 alias ap='ansible-playbook'
 
-alias adb-connect='adb connect 192.168.2.104:8888'
+alias adb-connect='adb connect 192.168.2.102:8888'
+
+alias branch='git checkout $(git branch | peco)'
+alias branch-d='git branch -d $(git branch | peco)'
 
 # proxy alias for uec
 alias up='export http_proxy="http://proxy.uec.ac.jp:8080"; export https_proxy="http://proxy.uec.ac.jp:8080"'

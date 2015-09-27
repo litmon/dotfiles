@@ -1,25 +1,21 @@
-if [ -f ~/.bashrc ] ; then
+[ -f ~/.bashrc ] &&
   . ~/.bashrc
-fi
 
-if [ -f ~/.ansible_hosts ] ; then 
+[ -f ~/.ansible_hosts ] &&
   export ANSIBLE_HOSTS=~/.ansible_hosts
-fi
 
 # Java settings
 export JAVA_HOME=`/usr/libexec/java_home -v 1.7`
 
 # nodebrew settings
-if [ -d ~/.nodebrew ] ; then
-  export PATH=$HOME/.nodebrew/current/bin:$PATH
+[ -d ~/.nodebrew ] &&
+  export PATH=$HOME/.nodebrew/current/bin:$PATH &&
   nodebrew use default
-fi
 
 # rbenv settings
-if [ -d ~/.rbenv ] ; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
+[ -d ~/.rbenv ] &&
+  export PATH="$HOME/.rbenv/bin:$PATH" &&
   eval "$(rbenv init -)"
-fi
 
 # git settings 
 if [ -f ~/.git-completion.bash -a -f ~/.git-prompt.sh ] ; then
@@ -28,7 +24,7 @@ if [ -f ~/.git-completion.bash -a -f ~/.git-prompt.sh ] ; then
   GIT_PS1_SHOWDIRTYSTATE=true
 
   ## ユーザー名のところを編集(gitリポジトリの状態を追加)
-  export PS1='\h:\W $(__git_ps1 "[\[\033[32m\]%s\[\033[0m\]]")\$ '
+  export PS1='\h:\W$(__git_ps1 "[\[\033[32m\]%s\[\033[0m\]]") \$ '
 fi
 
 # pkg-configのパスを通す
@@ -55,9 +51,8 @@ fi
 ## export PATH=$ANT_ROOT:$PATH
 
 # Heroku Toolbelt settings
-if [ -d /usr/local/heroku ]; then
+[ -d /usr/local/heroku ] &&
   export PATH="/usr/local/heroku/bin:$PATH"
-fi
 
 # less settings
 export LESS="-iMQRX"
@@ -70,6 +65,5 @@ EDITOR=/usr/local/bin/vim
 export EDITOR
 
 # BasicTex settings
-if [ -d /usr/texbin ]; then
+[ -d /usr/texbin ] &&
   export PATH=$PATH:/usr/texbin
-fi
